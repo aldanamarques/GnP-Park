@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>parking app</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- nav bar -->
+  <nav class="navbar title justify-content-between">
+    <a class="navbar-brand nav_menu" href="#" onclick="showMainMenu()">  GnP - Park</a>
+    <form class="form-inline">
+      <button class="btn title_sub" type="submit" onclick="openNav()">Menu</button>
+    </form>
+  </nav>
+  <!-- fin navbar -->
+  <!-- sidenav-->
+  <div id="submenu_1" class="sidenav">
+    <a href="#">Tarifas</a>
+    <a href="#">Espacios</a>
+    <a href="javascript:void(0)" onclick="closeNav()">Cerrar</a>
+  </div>
+  <!-- fin sidenav-->
+
+  <section id="main_menu">
+    <!-- tabla-->
+    <table  class="table-striped table-responsive" >
+      <tr>
+        <th >Motos</th>
+        <th>Autos</th>
+        <th>Camionetas</th>
+      </tr>
+      <tr class="info" >
+        <td>
+          <p id="num_moto">cantidad_motos</p>
+        </td>
+        <td>
+          <p id="num_auto">cantidad_autos</p>
+        </td>
+        <td>
+          <p id="num_cam">cantidad_camionetas</p>
+        </td>
+      </tr>
+    </table>
+    <span col>
+      <h3>
+        <p id="money">Valor aca</p> Facturado hoy dia </h3>
+    </span>
+
+    <button class="c_btn " type="button" onclick="showIngreso()">Ingreso</button>
+    <button class="c_btn" type="button" onclick="checkout()">Salida</button>
+
+  </section>
+  <section id="ingreso" class="ingreso hidden">
+      <h2> Agregar vehiculo</h2>
+
+      <div id="data">
+        <form id="lista">
+          <br>
+          <br>Patente:
+          <input id="nropatente" name="patente" type="text" placeholder="XXX-YYY"><br>
+          <input name="tipo" type="radio" value="auto"> auto 
+          <input name="tipo" type="radio" value="moto"> moto 
+          <input name="tipo" type="radio" value="camioneta"> camioneta
+                   <br>
+                   <p class="error-msg"></p>
+          <input class="button" type="button" value=" Reset " onclick="ResetForm()">&nbsp&nbsp&nbsp
+          <input class="button" type="button" value=" Add " onclick="AddData()">
+        </form>
+      </div>
+      
+      <h3>Autos estacionados</h3>
+      
+      <div id="tab">
+        <table id="list" cellspacing="0px" cellpadding="20px" text-align="center">
+          <thead>
+            <tr>
+              <td>Patente</td>
+              <td>Vehiculo</td>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      
+  </section>
+
+  </div>
+  <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
