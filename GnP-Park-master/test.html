@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>parking app</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- nav bar -->
+  <nav class="navbar title justify-content-between">
+    <a class="navbar-brand navBar" href="#" onclick="activarMenu()"> GnP - Park </a>
+    <button class="btn title_sub" type="button" onclick="openNav()"> Menu </button>
+  </nav>
+  <!-- fin navbar -->
+
+  <!-- sidenav-->
+  <div id="sidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="openNav()">&times;</a>
+    <a href="#" onclick="activarTarifa()">Tarifas</a>
+    <a href="#">Espacios</a>
+    <a href="#" onclick="openNav()">Cerrar</a>
+  </div>
+  <!-- fin sidenav-->
+
+  <section class="tarifa hidden">
+    <h1>Tarifas:</h1>
+    <form onSubmit="guardarTarifa(event)" class="tarifas">
+      <label>Motos</label>
+      <input class="form-control input-lg" type="number" id="tarifaMoto" placeholder="0" />
+      </div>
+      <div class="tarifa">
+        <label>Autos</label>
+        <input class="form-control input-lg" type="number" id="tarifaAuto" placeholder="0" />
+      </div>
+      <div class="tarifa">
+        <label>Camionetas</label>
+        <input class="form-control input-lg" type="number" id="tarifaCam" placeholder="0" />
+      </div>
+      <button type="button" class="btn btn-default" onclick="activarMenu()">Atras</button>
+      <button class="btn btn-default" type="submit">Guardar</button>
+      <p class="error-msg"></p><!-- Mostrar Error-->
+
+    </form>
+  </section>
+  <section class="menu">
+    <!-- tabla-->
+    <table class="table-striped table">
+      <tr>
+        <th>Motos</th>
+        <th>Autos</th>
+        <th>Camionetas</th>
+      </tr>
+      <tr class="info">
+        <td>
+          <p id="cantMotos">cantidad_motos</p>
+        </td>
+        <td>
+          <p id="cantAutos">cantidad_autos</p>
+        </td>
+        <td>
+          <p id="cantCamionetas">cantidad_camionetas</p>
+        </td>
+      </tr>
+    </table>
+    <span col>
+      <h3>
+        <p id="money">Valor aca</p>  </h3>
+    </span>
+
+    <button class="btn btn-lg" type="button" onclick="activarIngreso()">Ingreso</button>
+    <button class="btn btn-lg" type="button" onclick="activarSalida()">Salida</button>
+   <!-- <button class="btn btn-lg" type="button" onclick="iniciar()">INIICAR APP</button>-->
+  </section>
+
+  <section class="ingreso hidden">
+    <h2> Agregar vehiculo</h2>
+    <div id="data">
+      <form id="lista">
+        <br>Patente:
+        <input id="nroPatente" name="patente" type="text" placeholder="XXX-000" autocomplete="off">
+        <br>
+        <input name="tipo" type="radio" value="auto"> auto
+        <input name="tipo" type="radio" value="moto"> moto
+        <input name="tipo" type="radio" value="camioneta"> camioneta
+        <br>
+        <p class="error-msg"></p><!--Mostrar Error-->
+        <input class="button" type="button" value=" Atras " onclick="activarMenu()">
+        <input class="button" type="button" value=" Agregar " onclick="saveData()">
+      </form>
+    </div>
+    <h3>Autos estacionados</h3>
+    <div id="tabla" class="mostrarTabla"></div>
+  </section>
+
+  <section class="salida hidden">
+    <h1>Salida de Vehiculo:</h1>
+    <form class="salidaVehiculo">
+      <form id="eliminarPatente">Patente a Buscar:
+        <input id="eliminarPatente" name="patente" type="text" placeholder="XXX-000" autocomplete="off">
+        <br>
+        <p class="error-msg"></p><!--Mostrar Error -->
+        <input class="button" type="button" value=" Atras " onclick="activarMenu()">
+        <input class="button" type="button" value=" Registrar Salida " onclick="eliminarVehiculo()">
+        <h3>Autos estacionados</h3>
+        <div id="tabla2" class="mostrarTabla"></div>
+      </form>
+    </form>
+  </section>
+
+
+  </div>
+  <!-- /container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
